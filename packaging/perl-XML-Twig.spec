@@ -29,8 +29,6 @@ Source:         XML-Twig-%{version}.tar.gz
 BuildRequires:  perl-XML-Parser
 BuildRequires:  perl-macros
 Requires:       perl-XML-Parser
-BuildRoot:      %{_tmppath}/%{name}-%{version}-build
-%{perl_requires}
 
 %description
 XML::Twig is (yet another!) XML transformation module.
@@ -66,7 +64,6 @@ make test
 
 %files
 %defattr(-,root,root)
-%doc Changes README
 %dir %{perl_vendorlib}/XML
 %{perl_vendorlib}/XML/Twig.pm
 %{perl_vendorlib}/XML/Twig
