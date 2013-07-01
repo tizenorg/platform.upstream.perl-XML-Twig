@@ -26,6 +26,7 @@ Url:            http://search.cpan.org/dist/XML::Twig
 Group:          Development/Libraries/Perl
 # http://search.cpan.org/CPAN/authors/id/M/MI/MIROD/XML-Twig-%{version}.tar.gz
 Source:         XML-Twig-%{version}.tar.gz
+Source1001: 	perl-XML-Twig.manifest
 BuildRequires:  perl-XML-Parser
 BuildRequires:  perl-macros
 Requires:       perl-XML-Parser
@@ -50,6 +51,7 @@ information to get you started with XML::Twig
 
 %prep
 %setup -q -n XML-Twig-%{version}
+cp %{SOURCE1001} .
 
 %build
 perl Makefile.PL
@@ -63,6 +65,7 @@ make test
 %perl_process_packlist
 
 %files
+%manifest %{name}.manifest
 %defattr(-,root,root)
 %dir %{perl_vendorlib}/XML
 %{perl_vendorlib}/XML/Twig.pm
